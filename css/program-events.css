@@ -10,10 +10,11 @@ body {
 #events-ui #details {
 	float: left;
 	height: 100%;
-	overflow-y: hidden;
+	overflow-y: scroll;
+	margin-right: -15px;
 }
 #events-ui #thumbs {
-	width: 510px;
+	width: 525px;
 }
 #events-ui #times {
 	width: 120px;
