@@ -5,15 +5,26 @@ $( document ).ready(function() {
 	var $root = $('html, body');
 	$('a').click(function() {
 	    var href = $.attr(this, 'href');
-	    var arr
+	    var arr;
 	    arr = href.split('-');
 	    var section = arr[0];
 	    var section_id = arr[1];
 
+	    wizardScrollTo('#thumbs', 'thumb', section_id, hash);
 	    wizardScrollTo('#times', 'time', section_id, href);
 	    wizardScrollTo('#details', 'info', section_id, href);
 	    return false;
 	});
+	var hash = location.hash;
+	if (hash) {
+	    var arr;
+	    arr = hash.split('-');
+	    var section = arr[0];
+	    var section_id = arr[1];
+	    wizardScrollTo('#thumbs', 'thumb', section_id, hash);
+	    wizardScrollTo('#times', 'time', section_id, hash);
+	    wizardScrollTo('#details', 'info', section_id, hash);
+	}
 });
 
 function wizardScrollTo(container, block, id, href) {
