@@ -1,9 +1,13 @@
 #site-header {
 	position: relative;
 	width: 900px;
+	font-size: 14px;
+	font-family: sans-serif;
+	font-weight: lighter;
 }
 #site-header .sub,
 #site-header .main {
+	display: block;
 	position: relative;
 	float: left;
 	background: transparent;
@@ -15,15 +19,43 @@
 #site-header .sub {
 	width: 225px;
 	height: 225px;
+	background-color: #333;
 }
-#site-header .text {
+#site-header .sub:hover ,
+#site-header .sub:hover  .text {
+	background-color: #555;
+}
+#site-header .main .text {
+	position: absolute;
+	bottom: 75px;
+	right: 0;
+	padding: 25px;
+}
+#site-header .main .title {
+	font-size: 68px;
+}
+#site-header .main .subtext {
+	font-size: 25px;
+}
+#site-header .sub .text {
 	position: absolute;
 	bottom: 0;
-	background-color: #555;
+	background-color: #333;
+	padding: 5px;
+}
+#site-header .sub .text > * {
+	padding: 2px;
 }
 #site-header .title {
 	color: white;
 }
 #site-header .subtext {
 	color: yellow;
+}
+
+#site-header :hover img {
+	opacity: 1.0;
+}
+#site-header img {
+	opacity: 0.6;
 }
