@@ -10,16 +10,16 @@ body {
 #events-ui #details {
 	float: left;
 	height: 100%;
-	overflow-y: scroll;
+	overflow-y: hidden;
 }
 #events-ui #thumbs {
-	width: 530px;
+	width: 510px;
 }
 #events-ui #times {
 	width: 120px;
 }
 #events-ui #details {
-	width: 415px;
+	width: 400px;
 	font-variant: small-caps;
 }
 
@@ -32,10 +32,10 @@ body {
 #events-ui img {
 	opacity: 0.6;
 }
+#events-ui .active img,
 #events-ui :hover img {
 	opacity: 1.0;
 }
-
 
 #events-ui #thumbs a,
 #events-ui #times a,
@@ -51,6 +51,8 @@ body {
 	padding: 5px 10px;
 	background-color: #333;
 }
+#events-ui a.active .text,
+#events-ui #times a.active,
 #events-ui #thumbs a:hover .text,
 #events-ui #times a:hover,
 #events-ui #details a:hover .text {
