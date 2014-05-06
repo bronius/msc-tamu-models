@@ -1,0 +1,63 @@
+body {
+	font-family: sans-serif;
+}
+
+#events-ui {
+	height: 100%;
+}
+#events-ui #thumbs,
+#events-ui #times,
+#events-ui #details {
+	float: left;
+	height: 100%;
+	overflow-y: scroll;
+}
+#events-ui #thumbs {
+	width: 530px;
+}
+#events-ui #times {
+	width: 120px;
+}
+#events-ui #details {
+	width: 415px;
+	font-variant: small-caps;
+}
+
+#events-ui #thumbs a {
+	display: block;
+	float: left;
+	width: 170px;
+	height: 100px;
+}
+#events-ui img {
+	opacity: 0.6;
+}
+#events-ui :hover img {
+	opacity: 1.0;
+}
+
+
+#events-ui #thumbs a,
+#events-ui #times a,
+#events-ui #details a {
+	display: block;
+	background-color: #333;
+	color: white;
+	text-decoration: none;
+}
+#events-ui #thumbs a .text,
+#events-ui #times a,
+#events-ui #details a .text {
+	padding: 5px 10px;
+	background-color: #333;
+}
+#events-ui #thumbs a:hover .text,
+#events-ui #times a:hover,
+#events-ui #details a:hover .text {
+	background-color: #555;
+}
+
+#events-ui #times a {
+	font-size: 10px;
+}
+
