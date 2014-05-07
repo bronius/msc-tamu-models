@@ -29,20 +29,22 @@ $( document ).ready(function() {
 });
 
 function wizardScrollTheOthers(clicked, section_id, section, href) {
-  if (clicked != 'thumb') wizardScrollTo('#thumbs', 'thumb', section_id, href);
-  if (clicked != 'time') wizardScrollTo('#times', 'time', section_id, href);
-  if (clicked != 'info') wizardScrollTo('#details', 'info', section_id, href);
+  wizardScrollTo('#thumbs', 'thumb', section_id, href, clicked);
+  wizardScrollTo('#times', 'time', section_id, href, clicked);
+  wizardScrollTo('#details', 'info', section_id, href, clicked);
 }
 
-function wizardScrollTo(container, block, id, href) {
+function wizardScrollTo(container, block, id, href, clicked_element) {
 	var blockid = block + '-' + id;
 	var targetblock = $('a[name="'+blockid+'"]');
 	$(container + ' .active').toggleClass('active');
 	targetblock.toggleClass('active');
-	var top = targetblock.position().top + $(container).scrollTop() - 250;
-  $(container).animate({
-      scrollTop: top
-  }, 500, function () {
-      window.location.hash = href;
-  });
+	if (clicked_element != block) {
+		var top = targetblock.position().top + $(container).scrollTop() - 250;
+	  $(container).animate({
+	      scrollTop: top
+	  }, 500, function () {
+	      window.location.hash = href;
+	  });
+	}
 }

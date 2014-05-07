@@ -14,13 +14,13 @@ body {
 	margin-right: -15px;
 }
 #events-ui #thumbs {
-	width: 525px;
+	width: 527px;
 }
 #events-ui #times {
-	width: 120px;
+	width: 122px;
 }
 #events-ui #details {
-	width: 415px;
+	width: 417px;
 	font-variant: small-caps;
 }
 
@@ -59,6 +59,15 @@ body {
 #events-ui #times a:hover,
 #events-ui #details a:hover .text {
 	background-color: #555;
+}
+#events-ui a {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+  border: 1px solid transparent;
+}
+#events-ui a.active {
+	border: 1px solid #aaa;
 }
 
 #events-ui #times a {
