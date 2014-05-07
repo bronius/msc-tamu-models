@@ -20,7 +20,7 @@ body {
 	width: 120px;
 }
 #events-ui #details {
-	width: 400px;
+	width: 415px;
 	font-variant: small-caps;
 }
 
@@ -38,6 +38,7 @@ body {
 	opacity: 1.0;
 }
 
+#events-ui #thumbs,
 #events-ui #thumbs a,
 #events-ui #times a,
 #events-ui #details a {
