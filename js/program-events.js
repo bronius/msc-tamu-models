@@ -10,9 +10,10 @@ $( document ).ready(function() {
 	    var section = arr[0];
 	    var section_id = arr[1];
 
-	    wizardScrollTo('#thumbs', 'thumb', section_id, hash);
-	    wizardScrollTo('#times', 'time', section_id, href);
-	    wizardScrollTo('#details', 'info', section_id, href);
+	    arr = this.name.split('-');
+	    var clicked = arr[0];
+	    wizardScrollTheOthers(clicked, section_id, section, href);
+
 	    return false;
 	});
 	var hash = location.hash;
@@ -27,15 +28,21 @@ $( document ).ready(function() {
 	}
 });
 
+function wizardScrollTheOthers(clicked, section_id, section, href) {
+  if (clicked != 'thumb') wizardScrollTo('#thumbs', 'thumb', section_id, href);
+  if (clicked != 'time') wizardScrollTo('#times', 'time', section_id, href);
+  if (clicked != 'info') wizardScrollTo('#details', 'info', section_id, href);
+}
+
 function wizardScrollTo(container, block, id, href) {
 	var blockid = block + '-' + id;
 	var targetblock = $('a[name="'+blockid+'"]');
 	$(container + ' .active').toggleClass('active');
 	targetblock.toggleClass('active');
+	var top = targetblock.position().top + $(container).scrollTop() - 250;
   $(container).animate({
-      scrollTop: targetblock.offset().top - 100
+      scrollTop: top
   }, 500, function () {
       window.location.hash = href;
   });
 }
-// $('#times').animate({ scrollTop: $('#times a[name="time-109"]').offset().top} , 500)
