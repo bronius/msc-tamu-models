@@ -27,8 +27,8 @@ include 'program-events-src.php';
 <?php foreach($events as $index => $event) {
 		$id = $index;
 		$filename = $event['Image'];
-		$datetime = $event['Start Date'] . '<br/>' . $event['Start Time'];
-		$datetime .= isset($event['End Date']) ? '<br/>until<br/>' . $event['End Date'] . '<br/>' . $event['End Time'] : '';
+		$datetime = $event['Start Date'] . (isset($event['Start Time']) ? ' ' . $event['Start Time'] . '<br/>' : '');
+		$datetime .= isset($event['End Date']) ? 'until<br/>' . $event['End Date'] . '<br/>' . $event['End Time'] : '';
 				print "<a href=\"#event-$id\" name=\"time-$id\">$datetime</a>\n";
 }
 ?>
