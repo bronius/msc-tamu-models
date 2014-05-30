@@ -37,14 +37,19 @@ include 'program-events-src.php';
 <?php foreach($events as $index => $event) {
 		$id = $index;
 		$filename = $event['Image'];
+		$eventname = $event['Event Name'];
+		$organization = $event['Org Name'];
+		$location = $event['Location'];
+		$datetime = $event['Start Date'] . (isset($event['Start Time']) ? ' ' . $event['Start Time'] . '' : '');
+		$datetime .= isset($event['End Date']) ? ' - ' . $event['End Date'] . ' ' . $event['End Time'] : '';
 		?>
 				<a href="#event-<?php echo $id; ?>" name="info-<?php echo $id; ?>">
 					<img src="images/380x245/<?php echo $filename; ?>?<?php echo $id; ?>" />
 					<div class="text">
-						MSC Aggie Cinema BlockBuster Series:<br/>
-						Thu Sep 12, 2014, 7:00pm - 10:00pm<br/>
-						Man of Steel<br/>
-						Rudder Theatre
+						<?php echo $organization; ?>:<br/>
+						<?php echo $datetime; ?><br/>
+						<?php echo $eventname; ?><br/>
+						<?php echo $location; ?>
 					</div>
 				</a>
 		<?php
