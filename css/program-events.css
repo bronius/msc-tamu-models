@@ -18,9 +18,11 @@ body {
 }
 #events-ui #times {
 	width: 122px;
+	text-align: center;
 }
 #events-ui #details {
 	width: 417px;
+	text-align: center;
 }
 
 #events-ui #thumbs a {

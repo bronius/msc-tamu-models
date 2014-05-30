@@ -14,6 +14,14 @@ include 'program-events-src.php';
 	<?php //var_dump($files); ?>
 	<?php //var_dump($events); ?>
 		<h1>Model for Program Events</h1>
+	<?php 
+		$location = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '';
+		if ($location) {
+			print "<div class=\"back-button\"><a href=\"$location\">Back</a></div>";
+		} else {
+			print "Nowhere to go back to, so no back button .. ";
+		}
+	?>
 		<div id="events-ui">
 			<div id="thumbs">
 <?php foreach($events as $index => $event) {
