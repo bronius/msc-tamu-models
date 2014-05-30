@@ -35,3 +35,8 @@ foreach ($events as $eventindex => &$event) {
 	}
 	$event['Image'] = $files[$eventindex];
 }
+// Double the dummy events array to make more data (bc we have lots of images)
+$cnt = count($events);
+foreach ($events as $eventindex => $event) {
+	$events[$eventindex + $cnt] = $event;
+}
