@@ -21,7 +21,6 @@ body {
 }
 #events-ui #details {
 	width: 417px;
-	font-variant: small-caps;
 }
 
 #events-ui #thumbs a {
@@ -44,7 +43,7 @@ body {
 #events-ui #details a {
 	display: block;
 	background-color: #333;
-	color: white;
+	color: #ddd;
 	text-decoration: none;
 }
 #events-ui #thumbs a .text,
@@ -74,3 +73,15 @@ body {
 	font-size: 10px;
 }
 
+#events-ui #details .organization {
+	font-variant: small-caps;
+}
+
+#events-ui #details .description {
+	padding: 1em;
+	color: white;
+	display: none;
+}
+#events-ui #details .active .description {
+	display: block;
+}

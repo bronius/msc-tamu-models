@@ -39,6 +39,7 @@ include 'program-events-src.php';
 		$filename = $event['Image'];
 		$eventname = $event['Event Name'];
 		$organization = $event['Org Name'];
+		$description = $event['Description'];
 		$location = $event['Location'];
 		$datetime = $event['Start Date'] . (isset($event['Start Time']) ? ' ' . $event['Start Time'] . '' : '');
 		$datetime .= isset($event['End Date']) ? ' - ' . $event['End Date'] . ' ' . $event['End Time'] : '';
@@ -46,10 +47,13 @@ include 'program-events-src.php';
 				<a href="#event-<?php echo $id; ?>" name="info-<?php echo $id; ?>">
 					<img src="images/380x245/<?php echo $filename; ?>?<?php echo $id; ?>" />
 					<div class="text">
-						<?php echo $organization; ?>:<br/>
+						<div class="organization"><?php echo $organization; ?>:</div>
 						<?php echo $datetime; ?><br/>
 						<?php echo $eventname; ?><br/>
-						<?php echo $location; ?>
+						<?php echo $location; ?><br/>
+						<div class="description">
+							<?php echo $description; ?>
+						</div>
 					</div>
 				</a>
 		<?php

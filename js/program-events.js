@@ -39,8 +39,9 @@ function wizardScrollTo(container, block, id, href, clicked_element) {
 	var targetblock = $('a[name="'+blockid+'"]');
 	$(container + ' .active').toggleClass('active');
 	targetblock.toggleClass('active');
+  // Scroll related blocks into view
 	if (clicked_element != block) {
-		var top = targetblock.position().top + $(container).scrollTop() - 250;
+  	var top = targetblock.position().top + $(container).scrollTop() - 250;
 	  $(container).animate({
 	      scrollTop: top
 	  }, 500, function () {
