@@ -35,8 +35,8 @@ include 'program-events-src.php';
 <?php foreach($events as $index => $event) {
 		$id = $index;
 		$filename = $event['Image'];
-		$datetime = $event['Start Date'] . (isset($event['Start Time']) ? ' ' . $event['Start Time'] . '<br/>' : '');
-		$datetime .= isset($event['End Date']) ? 'until<br/>' . $event['End Date'] . '<br/>' . $event['End Time'] : '';
+		$datetime = $event['Start Date'] . (isset($event['Start Time']) ? '<br/>' . $event['Start Time'] . '<br/>' : '');
+		// $datetime .= isset($event['End Date']) ? 'until<br/>' . $event['End Date'] . '<br/>' . $event['End Time'] : '';
 				print "<a href=\"#event-$id\" name=\"time-$id\">$datetime</a>\n";
 }
 ?>
@@ -50,17 +50,17 @@ include 'program-events-src.php';
 		$description = $event['Description'];
 		$location = $event['Location'];
 		$datetime = $event['Start Date'] . (isset($event['Start Time']) ? ' ' . $event['Start Time'] . '' : '');
-		$datetime .= isset($event['End Date']) ? ' - ' . $event['End Date'] . ' ' . $event['End Time'] : '';
+		// $datetime .= isset($event['End Date']) ? ' - ' . $event['End Date'] . ' ' . $event['End Time'] : '';
 		?>
 				<a href="#event-<?php echo $id; ?>" name="info-<?php echo $id; ?>">
 					<img src="images/380x245/<?php echo $filename; ?>?<?php echo $id; ?>" />
 					<div class="text">
-						<div class="organization"><?php echo $organization; ?>:</div>
+						<h2><?php echo $eventname; ?></h2>
 						<?php echo $datetime; ?><br/>
-						<?php echo $eventname; ?><br/>
 						<?php echo $location; ?><br/>
 						<div class="description">
 							<?php echo $description; ?>
+							<p class="organization"><?php echo ($organization) ? "Presented by $organization" : ""; ?></p>
 						</div>
 					</div>
 				</a>
