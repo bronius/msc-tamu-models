@@ -58,6 +58,7 @@ body {
 #events-ui #times a.active,
 #events-ui #thumbs a:hover .text,
 #events-ui #times a:hover,
+#events-ui #details a:hover,
 #events-ui #details a:hover .text {
 	background-color: #555;
 }
