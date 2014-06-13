@@ -76,6 +76,9 @@ body {
 	font-size: 10px;
 }
 
+#events-ui #details > a {
+	padding: 10px 0;
+}
 #events-ui #details .organization {
 	font-variant: small-caps;
 }
